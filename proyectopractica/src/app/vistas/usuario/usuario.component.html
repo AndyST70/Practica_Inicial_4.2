@@ -1,0 +1,63 @@
+<div class = "usuario-group">
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-50 py-5"><img class="rounded-circle mt-5" width="300px" src="assets/Personal.png"><span class="font-weight-bold"></span><span class="text-black-50"></span><span> </span></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Perfil</h4>
+                </div>
+                <div class = "row mt-2">
+                    <div class="col-md-12"><label class="labels">Registro Academico</label><input type="text" class="form-control" placeholder="Registro Academico" value=""></div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label class="labels">Nombre</label><input type="text" class="form-control" placeholder="Nombres" value="">
+                    </div>
+                    <div class="col-md-6"><label class="labels">Apellidos</label><input type="text" class="form-control" value="" placeholder="Apellidos"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Contraseña</label><input type="text" class="form-control" placeholder="Contraseña" value=""></div>
+                    <div class="col-md-12"><label class="labels">Correo Electronico</label><input type="text" class="form-control" placeholder="Correo Electronico" value=""></div>
+                </div>
+                <br><br>
+                <button class="btn btn-primary profile-button" type="button">Actualizar</button>
+                
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center experience"><span>Asignar Cursos</span></div><br>
+                <button type="button" class="btn btn-light" href = "/">Cursos  </button>         
+            </div>
+        </div>
+<div class = "comentario-group">
+    <div class = "container">
+            <h4>Haz escuchar tu voz</h4>
+            <p>¿Quieres dejar una referencia de algún Profesor o Curso?</p>
+            <div class="row mt-3">
+                <div class="col-md-2">
+                    <input type="text" class="form-control" placeholder="Registro Academico" value="">
+                </div>
+                
+                <div class="col-md-2">
+
+                    <input type = "radio" id = "Opcion" name = "drone" value = "Curso" checked><label for = "Curso" >Curso</label>
+                </div>
+                <div class="col-md-2">
+                    <input type = "radio" id = "Opcion" name = "drone" value = "Catedratico" checked><label for = "Catedratico" >Catedratico</label>
+                </div>
+            <div>
+                <br>
+                <textarea name="comentarios" rows="5" cols="50">Escribe aquí tus comentarios</textarea>
+                <br>
+                <button type ="submit" class = "btn btn-primary" (click)="comentar()">Comentar</button> 
+            </div>
+        </div>    
+</div>
+        
+    </div>
+</div>
+
