@@ -44,7 +44,7 @@ class usuarioController2 {
                     if (err)
                         throw err;
                     if (result.length > 0 && result[0].password == pass) { //Muestra error pero la linea es funcional
-                        res.json({ text: 'Credenciales correctas' });
+                        res.json({ text: 'Credenciales correctas', Registro_Academico: result[0].Registro_Academico, nombres: result[0].nombres, apellidos: result[0].apellidos, password: result[0].password, correo: result[0].correo });
                         console.log('OK');
                     }
                     else {
