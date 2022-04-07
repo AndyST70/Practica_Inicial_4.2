@@ -34,30 +34,37 @@
             </div>
         </div>
 <div class = "comentario-group">
+    <form [formGroup]= "comentarioForm"(ngSubmit)= "postComentario(comentarioForm.value)"> 
     <div class = "container">
             <h4>Haz escuchar tu voz</h4>
             <p>¿Quieres dejar una referencia de algún Profesor o Curso?</p>
             <div class="row mt-3">
                 <div class="col-md-2">
-                    <input type="text" class="form-control" placeholder="Registro Academico" value="">
+                    <input type="text" class="form-control" placeholder="Registro Academico" value="" formControlName="usuarioRA">
+                    
                 </div>
-                
+                <div class="col-md-2">
+                    <input type="text" class="form-control" placeholder="Referencia" value="" formControlName = "titulo">
+                    
+                </div>
                 <div class="col-md-2">
 
-                    <input type = "radio" id = "Opcion" name = "drone" value = "Curso" checked><label for = "Curso" >Curso</label>
+                    <input type = "radio" id = "Opcion" name = "tipo" value = "Curso" checked formControlName = "tipo"><label for = "Curso" >Curso</label>
                 </div>
                 <div class="col-md-2">
-                    <input type = "radio" id = "Opcion" name = "drone" value = "Catedratico" checked><label for = "Catedratico" >Catedratico</label>
+                    <input type = "radio" id = "Opcion" name = "tipo" value = "Catedratico" checked formControlName = "tipo"><label for = "Catedratico"  >Catedratico</label>
                 </div>
             <div>
                 <br>
-                <textarea name="comentarios" rows="5" cols="50">Escribe aquí tus comentarios</textarea>
+                <textarea name="comentarios" rows="5" cols="50" formControlName = "descripcion">Escribe aquí tus comentarios</textarea>
                 <br>
-                <button type ="submit" class = "btn btn-primary" (click)="comentar()">Comentar</button> 
+
+                <button type ="submit" class = "btn btn-primary"> Comentar</button> <!--(click)="comentar()"  -->
+                <button type="button" class="btn btn-warning" (click)="comentar()" >Warning</button>
             </div>
         </div>    
 </div>
-        
+        </form>
     </div>
 </div>
 

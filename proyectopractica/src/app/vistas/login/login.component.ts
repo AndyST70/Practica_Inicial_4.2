@@ -62,6 +62,8 @@ export class LoginComponent implements OnInit {
         // localStorage.setItem("token", this.usuario_a_logear.result.token)
          this.router.navigate(['usuario'])
          console.log(data.text);
+        // entradadeusuario(id)
+
        }else{
          console.log("el usuario no se logeo");
          console.log(data.text);
@@ -73,8 +75,10 @@ export class LoginComponent implements OnInit {
        console.log(data);
      })
    }
-   editarusuario(Registro_Academico){
-     console.log(Registro_Academico)
 
-   }
+
+  //  editarusuario(Registro_Academico){
+  //    console.log(Registro_Academico)
+
+  //  }
 }
