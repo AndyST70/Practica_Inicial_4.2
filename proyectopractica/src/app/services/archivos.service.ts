@@ -6,6 +6,7 @@ import {LoginI} from"../models/login.interface";
 import {ResponseI} from "../models/response.interface";
 import { observable } from 'rxjs';
 import { Usuario } from '../models/usuario';
+import { UsuarioI } from '../models/vista';
 import { ComentarioI } from '../models/Comentario';
 import { ListaComentariosI } from '../models/ListaComentar';
 @Injectable({
@@ -28,10 +29,20 @@ export class ArchivosService {
     let direccion = this.Api_Uri +"usuarios"
     return this.http.post<ResponseI>(direccion, form)
   }
-  //? no probado
-  obtenerUsuario(Registro_Academico: any ): Observable<Usuario[]>{   //mandar usuario
-    let direccion = this.Api_Uri + "usuarios/"+Registro_Academico 
-    return this.http.get <Curso[]>(direccion);
+  //? no funcio :(
+  // editarUsuario(Registro_Academico: any ): Observable<UsuarioI>{   //mandar usuario
+  //   let direccion = this.Api_Uri + "usuarios/"+ Registro_Academico; 
+  //   return this.http.get <UsuarioI>(direccion);
+  // }
+  //? funcionando
+  singleUsuario(Registro_Academico: any): Observable<any>{
+    let direccion = this.Api_Uri + "usuarios/"+ Registro_Academico
+    return this.http.get<any>(direccion, Registro_Academico)
+  }
+  //? no sabemos
+  editarUsuario(form: UsuarioI, Registro_Academico: any):Observable<ResponseI>{
+    let direccion = this.Api_Uri + "usuarios/" + Registro_Academico
+    return this.http.put<any>(direccion, form)
   }
   //? funciona
   nuevocomentario(form: ComentarioI): Observable<ResponseI> {
@@ -39,12 +50,13 @@ export class ArchivosService {
     return this.http.post<ResponseI>(direccion, form);
 
   }
+  //? funciona
   Comentarios(form: any): Observable<ListaComentariosI[]>{
     let direccion = this.Api_Uri + "publicacionesLista/publicaciones"
     return this.http.get<ListaComentariosI[]>(direccion);
   }
   
-  
+  //? funciona
   getCursos(){
     return this.http.get('${this.Api_Uri}/archivos');
   }

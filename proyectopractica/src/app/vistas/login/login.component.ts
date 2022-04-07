@@ -10,10 +10,7 @@ import{ ResponseI}from "../../models/response.interface"
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm = new FormGroup({
-    Registro_Academico: new FormControl("", Validators.required),
-    password: new FormControl("", Validators.required)
-  })
+ 
   Registro_Academico: string = "";
   password: string = "";
 
@@ -35,17 +32,17 @@ export class LoginComponent implements OnInit {
   }
   
   //!No funciona 
-  onLogin(form:LoginI){
-    // recibimos el response
-    this.api.loginByEmail(form).subscribe(data=>{
-      //console.log(form)//visualizamos
-      let dataResponse: ResponseI = data;
-      if(dataResponse.status == "200" ){
-        localStorage.setItem("token", dataResponse.result.token);
-        this.router.navigate(['dashboard']);
-      }
-    })
-  }
+  // onLogin(form:LoginI){
+  //   // recibimos el response
+  //   this.api.loginByEmail(form).subscribe(data=>{
+  //     //console.log(form)//visualizamos
+  //     let dataResponse: ResponseI = data;
+  //     if(dataResponse.status == "200" ){
+  //       localStorage.setItem("token", dataResponse.result.token);
+  //       this.router.navigate(['dashboard']);
+  //     }
+  //   })
+  // }
 
   logear():void{
      this.Registro_Academico=((document.getElementById('Registro_Academico') as HTMLInputElement).value);
@@ -60,7 +57,7 @@ export class LoginComponent implements OnInit {
       if(data.text=='Credenciales correctas'){
          console.log("aqui va todo bien, el usuario se logueo");
         // localStorage.setItem("token", this.usuario_a_logear.result.token)
-         this.router.navigate(['usuario'])
+         this.router.navigate(['usuario',  this.Registro_Academico])
          console.log(data.text);
         // entradadeusuario(id)
 

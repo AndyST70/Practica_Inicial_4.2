@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'editar', component : EditarComponent},
   {path: 'nuevo', component : NuevoComponent},
   {path: 'lista', component : ListComponent},
-  {path: 'usuario', component : UsuarioComponent},
+  {path: 'usuario/:id', component : UsuarioComponent},
   {path: 'comentar', component : ComentarComponent},
 
 ];
