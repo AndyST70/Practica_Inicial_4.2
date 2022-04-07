@@ -68,17 +68,27 @@ export class UsuarioComponent implements OnInit {
     this.api.nuevocomentario(form).subscribe((data: any)=>{  
     })
   }
-  posteditar(Registro_Academico: UsuarioI, user : any){
-    user = this.na;     
-    this.api.editarUsuario(Registro_Academico, Registro_Academico).subscribe(data =>{
-      // let msj : ResponseI = data;
-      // if(msj.status == "userupdate"){
+  // posteditar(Registro_Academico: UsuarioI, user : any){
+  //   user = this.na;     
+  //   this.api.editarUsuario(Registro_Academico, Registro_Academico).subscribe(data =>{
+  //     // let msj : ResponseI = data;
+  //     // if(msj.status == "userupdate"){
         
 
-      // }else{
+  //     // }else{
 
-      // }
-      console.log(Registro_Academico)
+
+
+  //     // }
+  //     console.log(Registro_Academico)
+  //   })
+  // }
+
+  //Prueba
+  posteditar(form: UsuarioI){
+    console.log(form)   
+    this.api.editarUsuario(form).subscribe((data: any) =>{
+
     })
   }
 }

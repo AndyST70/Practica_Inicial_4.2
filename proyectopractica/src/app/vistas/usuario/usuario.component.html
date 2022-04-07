@@ -10,12 +10,14 @@
                     <h4 class="text-right">Perfil</h4>
                 </div>
 <div class= "container">
+                <form [formGroup]= "usuarioForm"(ngSubmit)= "posteditar(usuarioForm.value)"> 
                 <div class = "usuario-group">
-                    <form [formGroup]="usuarioForm" >       <!--  (ngSubmit)="posteditar(usuarioForm.value)"-->           
+                </div>           
                 <div class = "row mt-2">
                     <div class="col-md-12">
                         <label class="labels">Registro Academico</label>
-                        <input type="text" id = "Registro_Academico" value="" class="form-control" placeholder="Registro Academico" formControlName = "Registro_Academico"></div>
+                        <input type="text" id = "Registro_Academico" value="" class="form-control" placeholder="Registro Academico" formControlName = "Registro_Academico">
+                    </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-6">
@@ -33,9 +35,10 @@
                         <input type="text" class="form-control" placeholder="Correo Electronico" value="" formControlName = "correo"></div>
                 </div>
                 <br><br>
-                <button class="btn btn-primary profile-button" type="button" (click)="posteditar()" >Actualizar</button>
+                <button class="btn btn-primary profile-button" type="submit" >Actualizar</button>
+                <!-- (click)="posteditar()" -->
             </form>        
-                </div> 
+               
 </div>
         </div>
         <div class="col-md-4">

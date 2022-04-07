@@ -40,8 +40,8 @@ export class ArchivosService {
     return this.http.get<any>(direccion, Registro_Academico)
   }
   //? no sabemos
-  editarUsuario(form: UsuarioI, Registro_Academico: any):Observable<ResponseI>{
-    let direccion = this.Api_Uri + "usuarios/" + Registro_Academico
+  editarUsuario(form: UsuarioI):Observable<ResponseI>{
+    let direccion = this.Api_Uri + "usuarios/" + form.Registro_Academico
     return this.http.put<any>(direccion, form)
   }
   //? funciona
